@@ -10,6 +10,7 @@ from app.db import init_db
 from app.routes.auth import router as auth_router
 from app.routes.crawl import router as crawl_router
 from app.routes.images import router as images_router
+from app.routes.upload import router as upload_router
 
 
 @asynccontextmanager
@@ -28,6 +29,7 @@ app = FastAPI(
 app.include_router(crawl_router)
 app.include_router(auth_router)
 app.include_router(images_router)
+app.include_router(upload_router)
 
 
 @app.get("/health")

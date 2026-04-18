@@ -56,6 +56,27 @@ def gcs_uri_to_blob_name(gcs_uri: str) -> tuple[str, str]:
     return rest[:slash], rest[slash + 1 :]
 
 
+def allowed_image_suffix(filename: str) -> bool:
+    lower = filename.lower()
+    return any(lower.endswith(s.lower()) for s in _IMAGE_SUFFIXES)
+
+
+def upload_bytes_to_gcs(
+    bucket_name: str,
+    blob_name: str,
+    data: bytes,
+    content_type: str = "application/octet-stream",
+) -> str:
+    """Upload bytes; returns gs://bucket/blob_name."""
+    if not bucket_name:
+        raise ValueError("GCS_BUCKET is not configured")
+    client = _client()
+    bucket = client.bucket(bucket_name)
+    blob = bucket.blob(blob_name)
+    blob.upload_from_string(data, content_type=content_type)
+    return f"gs://{bucket_name}/{blob_name}"
+
+
 def signed_url_for_gcs_uri(gcs_uri: str, expiration_seconds: int | None = None) -> str:
     """
     V4 signed GET URL. Uses default credentials (Cloud Run SA or local ADC).
