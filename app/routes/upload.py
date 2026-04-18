@@ -19,6 +19,9 @@ async def upload_image(
     """
     Upload one image to gs://GCS_BUCKET/{GCS_UPLOAD_PREFIX}/{uuid}.{ext}.
     Requires the runtime service account to have storage.objects.create on the bucket.
+
+    **Important Note:** For best results and compatibility with dlib, please upload images
+    in JPEG/RGB format.
     """
     settings = get_settings()
     if not settings.gcs_bucket:

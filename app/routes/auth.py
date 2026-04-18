@@ -25,6 +25,11 @@ async def auth_selfie(
     file: UploadFile = File(...),
     db: Session = Depends(get_db),
 ) -> SelfieAuthResponse:
+    """
+    Selfie-as-a-key: match one face to an indexed identity.
+
+    **Important Note:** For best results and compatibility with dlib, use JPEG/RGB images.
+    """
     settings = get_settings()
     data = await file.read()
     if not data:

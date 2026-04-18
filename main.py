@@ -21,7 +21,11 @@ async def lifespan(_app: FastAPI):
 
 app = FastAPI(
     title="Grabpic",
-    description="Intelligent Identity & Retrieval Engine — facial grouping and selfie auth",
+    description=(
+        "Intelligent Identity & Retrieval Engine — facial grouping and selfie auth.\n\n"
+        "**Important Note:** For best results and compatibility with dlib, please upload images "
+        "in **JPEG/RGB** format."
+    ),
     version="0.1.0",
     lifespan=lifespan,
 )

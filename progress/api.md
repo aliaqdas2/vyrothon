@@ -1,5 +1,7 @@
 # Grabpic API
 
+**Important Note:** For best results and compatibility with dlib, please upload images in **JPEG/RGB** format.
+
 Set **`BASE_URL`** to your deployed origin (Cloud Run service URL) or `http://127.0.0.1:8000` locally. Full URLs below are **`{BASE_URL}` + path** (paste your host in place of `{BASE_URL}`).
 
 **Interactive API docs:** `{BASE_URL}/docs` (Swagger UI), `{BASE_URL}/redoc` (ReDoc).

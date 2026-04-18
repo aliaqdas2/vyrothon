@@ -1,5 +1,7 @@
 # Grabpic — judge test sheet (copy-paste)
 
+<p><strong style="color:#c62828;">Important Note:</strong> <strong style="color:#c62828;">For best results and compatibility with dlib, please upload images in JPEG/RGB format.</strong></p>
+
 > **For hackathon judges:** you **do not need Google Cloud Console, `gcloud`, or `gsutil`**. Add photos through the API only: open **[Swagger UI](https://grabpic-api-357617293030.us-central1.run.app/docs)** and use **Try it out** on **`POST /upload`**, then **`POST /crawl`**, **`POST /auth/selfie`**, **`GET /users/{grab_id}/images`**. Optional: the **`curl`** commands below match that same flow.
 
 **Primary link (upload and test in the browser):**  

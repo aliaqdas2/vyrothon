@@ -1,5 +1,7 @@
 # Grabpic
 
+<p><strong style="color:#c62828;">Important Note:</strong> <strong style="color:#c62828;">For best results and compatibility with dlib, please upload images in JPEG/RGB format.</strong></p>
+
 **This README is for hackathon judges** — to **test** the live API and **understand** how the system works (upload via **`POST /upload`**, face indexing, selfie-as-a-key, per-user photo retrieval). **No Google Cloud account is required:** use **[Swagger](https://grabpic-api-357617293030.us-central1.run.app/docs)**. Terminal commands are optional.
 
 **Quick start:** Use **[Swagger UI](https://grabpic-api-357617293030.us-central1.run.app/docs)** (`/docs`) to upload and test: **Try it out** on **`POST /upload`** (add test images to the bucket), then **`POST /crawl`**, **`POST /auth/selfie`**, and **`GET /users/{grab_id}/images`** — full flow without terminal commands.
