@@ -1,0 +1,15 @@
+fastapi
+pydantic-settings
+uvicorn[standard]
+python-multipart
+face_recognition
+opencv-python-headless
+numpy
+sqlalchemy
+psycopg2-binary
+pgvector
+google-cloud-storage
+python-dotenv
+# face_recognition_models imports pkg_resources; setuptools 81+ no longer exposes it
+setuptools>=70,<81
+pytest
